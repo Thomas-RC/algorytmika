@@ -20,13 +20,13 @@ public class Conversion
     /**
      * Zamień liczbe z systemu 10 na dowolny
      * @param number
-     * @param type
+     * @param radix
      * @return
      */
-    public String changeTo(int number, int type)
+    public String changeTo(int number, int radix)
     {
         String res = "";
-        if ((type > this.MAXRANGE) || (type < this.MINRANGE))
+        if ((radix > this.MAXRANGE) || (radix < this.MINRANGE))
         {
             return null;
         }
@@ -38,8 +38,8 @@ public class Conversion
 
         while (number > 0)
         {
-            res = TEMPLATE.charAt(number % type) + res;
-            number = number / type;
+            res = TEMPLATE.charAt(number % radix) + res;
+            number = number / radix;
         }
 
         return res;
@@ -48,16 +48,16 @@ public class Conversion
     /**
      * Zamien liczbe z dowolnego systemu na 10
      * @param number
-     * @param type
+     * @param radix
      * @return
      */
-    public int changeFrom(String number, int type)
+    public int changeFrom(String number, int radix)
     {
         int i, sign;
         int p = 1;
         int res = 0;
 
-        if ((type > this.MAXRANGE) || (type < this.MINRANGE))
+        if ((radix > this.MAXRANGE) || (radix < this.MINRANGE))
         {
             return 0;
         }
@@ -66,14 +66,14 @@ public class Conversion
 
         for (i = number.length()-1; i >= 0; i--)
         {
-            sign = this.selectChar(number.charAt(i), type);
+            sign = this.selectChar(number.charAt(i), radix);
 
             if (sign < 0)
             {
                 return 0;
             }
             res = res + (sign * p);
-            p = p * type;
+            p = p * radix;
         }
 
         return res;
@@ -82,12 +82,12 @@ public class Conversion
     /**
      * Wybierz znak z szablonu
      * @param sign
-     * @param type
+     * @param radix
      * @return
      */
-    private int selectChar(char sign, int type)
+    private int selectChar(char sign, int radix)
     {
-        for (int i = 0; i < type; i++)
+        for (int i = 0; i < radix; i++)
         {
             if (sign == this.TEMPLATE.charAt(i))
             {
