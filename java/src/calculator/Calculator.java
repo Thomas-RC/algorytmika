@@ -40,27 +40,32 @@ public class Calculator
                     System.out.println("Wybierz system liczbowy: 10 - dziesietny, 2 - binarny , 3 - trojkowy itd. MIN 2, MAX 32");
                     s = scan.nextInt();
 
-                    //todo: zabezpieczenie przed MAX i MIN
-
-                    System.out.print("Wprowadz dwie liczby w wybranym systemie liczbowym : ");
-                    x = scan.next();
-                    y = scan.next();
-
-                    if(s == 10)
+                    if( s > 32 || s < 2 )
                     {
-                        xf = Float.valueOf(x.trim());
-                        yf = Float.valueOf(y.trim());
-
-                        res = xf + yf;
-                        System.out.println("Wynik = " + res + "\n");
+                        System.out.println("MIN zakres to 2 a MAX zakres to 32");
                     }
                     else
                     {
-                        xc = Convert.changeFrom(x, s);
-                        yc = Convert.changeFrom(y, s);
+                        System.out.print("Wprowadz dwie liczby w wybranym systemie liczbowym : ");
+                        x = scan.next();
+                        y = scan.next();
 
-                        wyn = Convert.changeTo((xc+yc), s);
-                        System.out.println("Wynik = " + wyn + "\n");
+                        if(s == 10)
+                        {
+                            xf = Float.valueOf(x.trim());
+                            yf = Float.valueOf(y.trim());
+
+                            res = xf + yf;
+                            System.out.println("Wynik = " + res + "\n");
+                        }
+                        else
+                        {
+                            xc = Convert.changeFrom(x, s);
+                            yc = Convert.changeFrom(y, s);
+
+                            wyn = Convert.changeTo((xc+yc), s);
+                            System.out.println("Wynik = " + wyn + "\n");
+                        }
                     }
 
                     break;
@@ -68,95 +73,109 @@ public class Calculator
                     System.out.println("Wybierz system liczbowy: 10 - dziesietny, 2 - binarny , 3 - trojkowy itd. MIN 2, MAX 32");
                     s = scan.nextInt();
 
-                    //todo: zabezpieczenie przed MAX i MIN
-
-                    System.out.print("Wprowadz dwie liczby w wybranym systemie liczbowym : ");
-                    x = scan.next();
-                    y = scan.next();
-
-                    if(s == 10)
+                    if( s > 32 || s < 2 )
                     {
-                        xf = Float.valueOf(x.trim());
-                        yf = Float.valueOf(y.trim());
-
-                        res = xf - yf;
-                        System.out.println("Wynik = " + res + "\n");
+                        System.out.println("MIN zakres to 2 a MAX zakres to 32");
                     }
                     else
                     {
-                        xc = Convert.changeFrom(x, s);
-                        yc = Convert.changeFrom(y, s);
 
-                        wyn = Convert.changeTo((xc-yc), s);
-                        System.out.println("Wynik = " + wyn + "\n");
+                        System.out.print("Wprowadz dwie liczby w wybranym systemie liczbowym : ");
+                        x = scan.next();
+                        y = scan.next();
+
+                        if (s == 10)
+                        {
+                            xf = Float.valueOf(x.trim());
+                            yf = Float.valueOf(y.trim());
+
+                            res = xf - yf;
+                            System.out.println("Wynik = " + res + "\n");
+                        } else
+                        {
+                            xc = Convert.changeFrom(x, s);
+                            yc = Convert.changeFrom(y, s);
+
+                            wyn = Convert.changeTo((xc - yc), s);
+                            System.out.println("Wynik = " + wyn + "\n");
+                        }
                     }
-
                     break;
                 case '3':
                     System.out.println("Wybierz system liczbowy: 10 - dziesietny, 2 - binarny , 3 - trojkowy itd. MIN 2, MAX 32");
                     s = scan.nextInt();
 
-                    //todo: zabezpieczenie przed MAX i MIN
-
-                    System.out.print("Wprowadz dwie liczby w wybranym systemie liczbowym : ");
-                    x = scan.next();
-                    y = scan.next();
-
-                    if(s == 10)
+                    if( s > 32 || s < 2 )
                     {
-                        xf = Float.valueOf(x.trim());
-                        yf = Float.valueOf(y.trim());
-
-                        res = xf * yf;
-                        System.out.println("Wynik = " + res + "\n");
+                        System.out.println("MIN zakres to 2 a MAX zakres to 32");
                     }
                     else
                     {
-                        xc = Convert.changeFrom(x, s);
-                        yc = Convert.changeFrom(y, s);
 
-                        wyn = Convert.changeTo((xc*yc), s);
-                        System.out.println("Wynik = " + wyn + "\n");
-                    }
+                        System.out.print("Wprowadz dwie liczby w wybranym systemie liczbowym : ");
+                        x = scan.next();
+                        y = scan.next();
 
-                    break;
-                case '4':
-                    System.out.println("Wybierz system liczbowy: 10 - dziesietny, 2 - binarny , 3 - trojkowy itd. MIN 2, MAX 32");
-                    s = scan.nextInt();
-
-                    //todo: zabezpieczenie przed MAX i MIN
-
-                    System.out.print("Wprowadz dwie liczby w wybranym systemie liczbowym : ");
-                    x = scan.next();
-                    y = scan.next();
-
-
-                        System.out.println(x);
-                        System.out.println(y);
-                        if(s == 10)
+                        if (s == 10)
                         {
                             xf = Float.valueOf(x.trim());
                             yf = Float.valueOf(y.trim());
 
-                            if(xf == 0 || yf == 0)
+                            res = xf * yf;
+                            System.out.println("Wynik = " + res + "\n");
+                        } else
+                        {
+                            xc = Convert.changeFrom(x, s);
+                            yc = Convert.changeFrom(y, s);
+
+                            wyn = Convert.changeTo((xc * yc), s);
+                            System.out.println("Wynik = " + wyn + "\n");
+                        }
+                    }
+
+                    break;
+
+                case '4':
+                    System.out.println("Wybierz system liczbowy: 10 - dziesietny, 2 - binarny , 3 - trojkowy itd. MIN 2, MAX 32");
+                    s = scan.nextInt();
+
+                    if( s > 32 || s < 2 )
+                    {
+                        System.out.println("MIN zakres to 2 a MAX zakres to 32");
+                    }
+                    else
+                    {
+
+                        System.out.print("Wprowadz dwie liczby w wybranym systemie liczbowym : ");
+                        x = scan.next();
+                        y = scan.next();
+
+
+                        System.out.println(x);
+                        System.out.println(y);
+                        if (s == 10)
+                        {
+                            xf = Float.valueOf(x.trim());
+                            yf = Float.valueOf(y.trim());
+
+                            if (xf == 0 || yf == 0)
                             {
                                 System.out.println("Nie można dzielic przez 0");
-                            }
-                            else
+                            } else
                             {
                                 res = xf / yf;
                                 System.out.println("Wynik = " + res + "\n");
                             }
 
-                        }
-                        else
+                        } else
                         {
                             xc = Convert.changeFrom(x, s);
                             yc = Convert.changeFrom(y, s);
 
-                            wyn = Convert.changeTo((xc/yc), s);
+                            wyn = Convert.changeTo((xc / yc), s);
                             System.out.println("Wynik = " + wyn + "\n");
                         }
+                    }
 
                     break;
                 case '5':
