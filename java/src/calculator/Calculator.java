@@ -130,22 +130,33 @@ public class Calculator
                     x = scan.next();
                     y = scan.next();
 
-                    if(s == 10)
-                    {
-                        xf = Float.valueOf(x.trim());
-                        yf = Float.valueOf(y.trim());
 
-                        res = xf / yf;
-                        System.out.println("Wynik = " + res + "\n");
-                    }
-                    else
-                    {
-                        xc = Convert.changeFrom(x, s);
-                        yc = Convert.changeFrom(y, s);
+                        System.out.println(x);
+                        System.out.println(y);
+                        if(s == 10)
+                        {
+                            xf = Float.valueOf(x.trim());
+                            yf = Float.valueOf(y.trim());
 
-                        wyn = Convert.changeTo((xc/yc), s);
-                        System.out.println("Wynik = " + wyn + "\n");
-                    }
+                            if(xf == 0 || yf == 0)
+                            {
+                                System.out.println("Nie można dzielic przez 0");
+                            }
+                            else
+                            {
+                                res = xf / yf;
+                                System.out.println("Wynik = " + res + "\n");
+                            }
+
+                        }
+                        else
+                        {
+                            xc = Convert.changeFrom(x, s);
+                            yc = Convert.changeFrom(y, s);
+
+                            wyn = Convert.changeTo((xc/yc), s);
+                            System.out.println("Wynik = " + wyn + "\n");
+                        }
 
                     break;
                 case '5':
